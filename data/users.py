@@ -20,10 +20,5 @@ class User(SqlAlchemyBase):
     modified_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                       default=dt.datetime.now())
 
-    def __init__(self, **kwargs):
-        super().__init__()
-        for name in kwargs.keys():
-            self.__setattr__(name, kwargs[name])
-
     def __repr__(self):
         return f'<Colonist> {self.id} {self.surname} {self.name}'
